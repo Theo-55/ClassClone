@@ -5,10 +5,6 @@
 
 
 
-
-
-
-
 My computer science experience goes back to high school. Before I decided to major in computer science I took AP computer science principles. 
 After taking that class I decided to learn a bit of java over the summer with my previous teacher's help. My first year at New Paltz I took CS1 and 2. 
 These classes were fun and not stressful as a first year student. My second year I took OOP, CS3, OS, Computer architecture and assembly language and lastly discrete mathematics. 
