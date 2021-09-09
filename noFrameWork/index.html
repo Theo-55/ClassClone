@@ -72,10 +72,11 @@
           </nav>
 
           <h1>Hello World</h1>
-          <p> my first website in <strong>Bulma</strong></p>
+          <p> my first website in <strong>Bulma</strong>{{now}}
+          </p>
 
           <article class="message is-primary">
-            <div class="message-header">
+            <div class="message-header" :style="` font-Size: ${counter}px  `" >
               <p>Primary</p>
               <button class="delete" aria-label="delete"></button>
             </div>
@@ -96,8 +97,29 @@
 
         </div>
 
-          <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
           <script>
+
+              const VM = {
+                data() {
+                  return {
+                    counter: 3,
+                    now: new Date().toLocaleString()
+                  }
+                },
+                mounted() {
+                          setInterval(() => this.now = new Date().toLocaleString(),1000)
+                  },
+                  methods: {
+                    grow(){
+                      this.counter += 10;
+                    },
+                  }
+                }
+              
+
+              Vue.createApp(VM).mount('.container')
+
               let size = 72;
                 $(".message-header").click(function(){
                     size+= 10;
@@ -106,7 +128,7 @@
 
                 $(".delete").click(function(){
                   $(this).closest("messge").slideUp();
-                })
+                });
 
                 
           </script>
