@@ -1,0 +1,26 @@
+{
+  "name": "classclone",
+  "version": "1.0.0",
+  "description": "\"repo to build server\"",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theo-55/ClassClone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theo-55/ClassClone/issues"
+  },
+  "homepage": "https://github.com/Theo-55/ClassClone#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+  
+}
