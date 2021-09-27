@@ -19,7 +19,6 @@
     "url": "https://github.com/Theo-55/ClassClone/issues"
   },
   "homepage": "https://github.com/Theo-55/ClassClone#readme",
-  "author": "",
   "License": "ISC",
   "dependencies": {
     "express": "4.17.1"
