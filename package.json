@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Theo-55/ClassClone#readme",
   "License": "ISC",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "nodemon": "2.0.12"
