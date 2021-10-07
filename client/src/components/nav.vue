@@ -57,3 +57,17 @@
 
 <script>
 import LoginBadge from './LoginBadge';
+
+export default{
+    data() {
+        return {
+            isActive: false
+        }
+    },
+
+    compoonents: {
+        LoginBadge
+    }
+}
+
+</script>
