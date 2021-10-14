@@ -1,3 +1,4 @@
+import { flattenDeep } from 'lodash'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
@@ -5,8 +6,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+
   },
+
+  {
+    path: '/feed',
+    name: 'feed',
+    component: feed,
+    
+  },
+
   {
     path: '/about',
     name: 'About',
