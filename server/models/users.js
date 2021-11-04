@@ -52,6 +52,14 @@ module.exports.Add = function Add(user) {
     if(!user.firstName){
         throw { code: 422, msg: "First Name is required" }
     }
+    user.password = hash(user.password);
+
+    bcrypt.hash(user.password, process.env.SALT_ROUNDS, function(err,hash){
+        user.password = hash;
+
+    });
+
+
      list.push(user);
      return { ...user, password: undefined };
 }
@@ -81,16 +89,18 @@ module.exports.Delete = function Delete(user_id) {
     return user;
 }
 
-module.exports.Login = function Login(handle, password){
+module.exports.Login = function Login(handle, password, cb){
     console.log({ handle, password})
     const user = list.find(x=> x.handle == handle);
-    if(!user) throw { code: 401, msg: "Sorry there is no user with that handle" };
+    if(!user) cb({ code: 401, msg: "Sorry there is no user with that handle" });
+        bcrypt.compare(password, user.password,function(err,result){
 
-    if( ! (password == user.password) ){
-        throw { code: 401, msg: "Wrong Password" };
-    }
+            if( ! result) {
+                return cb({ code: 401, msg: "Wrong Password" });
+            }
+        
+        const data = { ...user, password: undefined };
 
-    const data = { ...user, password: undefined };
+            cb(null, {user: data});
+        });
 
-    return { user: data };
-}

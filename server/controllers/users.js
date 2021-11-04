@@ -15,4 +15,10 @@ app
         res.send(model.Get(req.params.user_id));
     })
 
+    .post("/login", (req, res, next) =>{
+        const user = model.Login(req.body.handle, req.body.password);
+
+        res.send(user);
+    })
+
 module.exports = app;
